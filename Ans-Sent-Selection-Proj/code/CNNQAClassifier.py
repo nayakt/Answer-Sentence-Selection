@@ -289,7 +289,6 @@ def train_cnn(ngram, data_folder, max_qs_l, max_ans_l,
 
 def train_lr_using_dense_layer(reg_train_data_np, reg_dev_data_np, reg_test_data_np, train_labeldata, dev_ref_lines, test_ref_lines):
     reg_feature_dim = len(reg_train_data_np[0])
-    print reg_feature_dim
     reg_input = Input(shape=(reg_feature_dim,), dtype='float32', name='reg_input')
     reg_layer = Dense(output_dim=1)(reg_input)
     reg_output = Activation('sigmoid', name='reg_output')(reg_layer)
